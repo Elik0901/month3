@@ -12,6 +12,7 @@ class FSMAnketa(StatesGroup):
     age = State()
     region = State()
     gender = State()
+    submit = State()
 
 
 async def fsm_start(message: types.Message):
@@ -96,7 +97,7 @@ def register_handlers_fsm_anketa(dp: Dispatcher):
     dp.register_message_handler(cancel_reg, Text(equals='cancel', ignore_case=True),
                                 state='*')
 
-    dp.register_message_handler(fsm_start, commands=['anketa'])
+    dp.register_message_handler(fsm_start, commands=['reg'])
     dp.register_message_handler(load_id, state=FSMAnketa.id)
     dp.register_message_handler(load_name, state=FSMAnketa.name)
     dp.register_message_handler(load_age, state=FSMAnketa.age)
