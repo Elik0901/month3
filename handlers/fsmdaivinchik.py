@@ -40,7 +40,7 @@ async def load_name(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['name'] = message.text
     await FSMAnketa.next()
-    await bot.send_message(message.from_user.id, "сколько лет?", reply_markup=direction_markup)
+    await bot.send_message(message.from_user.id, "сколько лет?", reply_markup=cancel_markup)
 
 
 
