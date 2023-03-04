@@ -1,9 +1,12 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+male_button = KeyboardButton("Мальчик")
+female_button = KeyboardButton("Девочка")
+
 direction_markup = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True
-)
+).add(male_button, female_button)
 
 
 submit_markup = ReplyKeyboardMarkup(
